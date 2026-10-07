@@ -196,7 +196,15 @@ case "karta":
 
 ## 8. Łączenie pracy — małe kroki
 
-Nazwy branchy: `feature/mapa`, `feature/ruch`, `feature/akcje`. W parze można użyć `feature/mapa-ruch` i `feature/akcje`. Każdy branch startuje ze wspólnej bazy.
+Nazwy branchy:
+
+- `feature/mapa`, 
+- `feature/ruch`, 
+- `feature/akcje`. 
+
+W parze można użyć `feature/mapa-ruch` i `feature/akcje`. 
+
+Każdy branch startuje ze wspólnej bazy.
 
 Przykład dla autora ruchu:
 
@@ -225,9 +233,21 @@ git merge origin/feature/akcje
 git push origin main
 ```
 
-`--ff-only` zatrzyma pobieranie, jeśli lokalny i zdalny `main` się rozeszły; wtedy sprawdźcie historię zamiast używać siłowego push. Po integracji każdy pobiera finalny `main`. Te polecenia zakładają, że tylko wyznaczony "osiołek" publikuje integrację na `main`, a pozostali publikują swoje branche.
+`--ff-only` zatrzyma pobieranie, jeśli lokalny i zdalny `main` się rozeszły; wtedy sprawdźcie historię zamiast używać siłowego push. 
 
-Jeżeli merge zgłosi konflikt, zatrzymajcie się i przeczytajcie obie wersje razem. Usuńcie znaczniki konfliktu, zachowując potrzebne zmiany obu osób. Zapiszcie plik, uruchomcie grę, potem `git add app.js` i `git commit`. Nie wybierajcie całego „ours/theirs” bez przeczytania. Konflikt nie jest obowiązkowy — udane połączenie rozdzielonych zadań też jest współpracą.
+Po integracji każdy pobiera finalny `main`.
+
+ Te polecenia zakładają, że tylko wyznaczony "osiołek" publikuje integrację na `main`, a pozostali publikują swoje branche.
+
+Jeżeli merge zgłosi konflikt, zatrzymajcie się i przeczytajcie obie wersje razem. 
+
+Usuńcie znaczniki konfliktu, zachowując potrzebne zmiany obu osób. 
+
+Zapiszcie plik, uruchomcie grę, potem `git add app.js` i `git commit`. 
+
+Nie wybierajcie całego „ours/theirs” bez przeczytania. 
+
+Konflikt nie jest obowiązkowy — udane połączenie rozdzielonych zadań też jest współpracą.
 
 ## 9. Odbiór i wymiana gier
 
