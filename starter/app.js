@@ -176,15 +176,63 @@ function idz(kierunek) {
   // console.log("Ruch do uzupelnienia");
 }
 
+
 // SEKCJA C — PRZEDMIOTY I WYGRANA
 function akcja(co) {
-  // TODO C1: zablokuj akcje po koncu gry.
-  // TODO C2: switch: karta / bezpiecznik / napraw / wyjdz.
-  // TODO C2: przed zmiana sprawdz pokoj i wymagany stan.
-  // TODO C3: przy odrzuceniu return; przy sukcesie break.
-  // TODO C3: po switch jedno zakonczTure().
-  // TODO C4: wygrana i koniec ustawione przed rozliczeniem tury!
-  console.log("Akcje do uzupelnienia");
+  // C1 — blokada po koncu gry
+  if (koniec) {
+    console.log("Gra sie skonczyla. Wpisz start(), aby zagrac ponownie.");
+    return;
+  }
+
+  // C2 — cztery akcje
+  switch (co) {
+
+    case "karta":
+      if (pokoj !== 1 || karta) {
+        console.log("Tutaj nie ma karty do zabrania.");
+        return;
+      }
+      karta = true;
+      console.log("Zabierasz karte dostepu.");
+      break;
+
+    case "bezpiecznik":
+      if (pokoj !== 2 || bezpiecznik || zasilanie) {
+        console.log("Tutaj nie ma bezpiecznika do zabrania.");
+        return;
+      }
+      bezpiecznik = true;
+      console.log("Zabierasz bezpiecznik.");
+      break;
+
+    case "napraw":
+      if (pokoj !== 3 || !bezpiecznik || zasilanie) {
+        console.log("Nie mozesz tu nic naprawic.");
+        return;
+      }
+      bezpiecznik = false;
+      zasilanie = true;
+      console.log("Montujesz bezpiecznik. Zasilanie wrocilo!");
+      break;
+
+    case "wyjdz":
+      if (pokoj !== 4 || !karta || !zasilanie) {
+        console.log("Drzwi sie nie otwieraja. Potrzebujesz karty i dzialajacego zasilania.");
+        return;
+      }
+      wygrana = true;
+      koniec = true;
+      console.log("Drzwi sie otwieraja! Uciekasz z serwerowni!");
+      break;
+
+    default:
+      console.log("Nieznana akcja. Wpisz pomoc(), aby zobaczyc liste.");
+      return;
+  }
+
+  // C3 — koszt energii w jednym miejscu
+  zakonczTure();
 }
 
 start();
