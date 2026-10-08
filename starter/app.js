@@ -66,7 +66,6 @@ function status() {
   console.log("Zasilanie: " + (zasilanie ? "tak" : "nie"));
   console.log("Koniec gry: " + (koniec ? "tak" : "nie"));
   console.log("Wygrana: " + (wygrana ? "tak" : "nie"));
-  console.log("Status do uzupelnienia");
 }
 
 function mapa() {
@@ -113,7 +112,7 @@ function rozejrzyj() {
       return "Nieznane pomieszczenie";
 
   }
-  console.log("Opis pokoju do uzupelnienia");
+  
 }
 
 // SEKCJA B — RUCH
