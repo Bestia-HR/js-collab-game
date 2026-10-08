@@ -52,7 +52,7 @@ function nazwaPokoju(numer) {
 }
 
 function pomoc() {
-  console.log('Dostepne: start(), pomoc(), status(), mapa(), rozejrzyj(), idz("prawo"), akcja("karta"), akcja("bezpiecznik"), akcja("napraw"), akcja("wyjdz")');
+  console.log('Dostepne: start(), pomoc(), status(), mapa(), rozejrzyj(), idz("prawo") idz("lewo"), akcja("karta"), akcja("bezpiecznik"), akcja("napraw"), akcja("wyjdz")');
   // TODO A5: dopisz pozostale kierunki i akcje oraz zasade kosztu.
   console.log('Zasada kosztu: Kazdy udany ruch i udana akcja kosztuja 1 energie. Bledy i przegladanie stanu sa bezplatne.');
 }
@@ -78,7 +78,6 @@ function mapa() {
     }
     console.log(opis);
   }
-  console.log("Mapa do uzupelnienia");
 }
 
 function rozejrzyj() {
@@ -106,7 +105,9 @@ function rozejrzyj() {
       break;
     case 4:
       console.log("Jestes przy wyjsciu");
-      console.log("Aby wyjsc wlacz zasilanie i wez karte dostepu");
+      if(karta && bezpiecznik){
+        console.log("Aby wyjsc wlacz zasilanie i wez karte dostepu");
+      }
       break;
     default:
       return "Nieznane pomieszczenie";
