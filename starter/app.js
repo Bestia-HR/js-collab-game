@@ -57,11 +57,62 @@ function rozejrzyj() {
 
 // SEKCJA B — RUCH
 function idz(kierunek) {
+  if(koniec==true)
+  {
+    console.log("Gra sie zakonczyla");
+    return ;
+  }
+  let nastepnyPokoj = pokoj;
+  switch(kierunek)
+  {
+    case "prawo":
+      {
+        
+      
+        nastepnyPokoj++;
+        if(nastepnyPokoj>4)
+          {
+            console.log("sciana !!!");
+            return ;
+            
+          }
+          
+         
+      
+        break;
+      }
+    case "lewo":
+      {
+        
+        nastepnyPokoj--;
+        if(nastepnyPokoj<1)
+        {
+          console.log("sciana !!!");
+          return ;
+          
+        }
+        
+        break;
+      }
+    default:
+      {
+        console.log(`Wskazówka: jetes w ${pokoj} pokoju a mozesz sie poruszac w lewo czyli pokoj dalej 
+          lub lewo pokoj nizej `);
+        
+        break;
+        
+      }
+
+
+  }
+  pokoj=nastepnyPokoj;
+  rozejrzyj();
+  zakonczTure();
   // TODO B1: zablokuj ruch po koncu gry.
   // TODO B2: switch kierunku; oblicz kandydat na nowy pokoj.
   // TODO B3: odrzuc pokoj poza 1..4 i nieznany kierunek bez kosztu.
   // TODO B4: zapisz poprawny pokoj, rozejrzyj(), zakonczTure().
-  console.log("Ruch do uzupelnienia");
+  // console.log("Ruch do uzupelnienia");
 }
 
 // SEKCJA C — PRZEDMIOTY I WYGRANA
