@@ -19,7 +19,7 @@ Jest piątek, 16:59. W szkolnej serwerowni zgasło światło, elektroniczne drzw
 | 2 | Magazyn | Zabrać bezpiecznik |
 | 3 | Serwerownia | Zamontować posiadany bezpiecznik i przywrócić zasilanie |
 | 4 | Wyjście | Otworzyć drzwi, gdy mamy kartę i działa zasilanie |
-
+ss
 **Reguły:**
 
 - Każdy udany ruch i wykonana akcja kosztują dokładnie 1 energię.
